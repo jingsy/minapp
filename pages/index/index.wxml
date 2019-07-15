@@ -1,13 +1,56 @@
 <!--index.wxml-->
+
+
+
+<!-- div 对应view 组件
+
+
+img对应image组件
+
+span对应 text组件-->
+<!-- <view class='container'>
+  <image src='../../image/bg.jpg' id='pic'></image>
+  <text class='name'>我靠</text>
+  <text class='welcome'>牛逼</text>
+  <text decode="{{true}}" space="ensp">a &nbsp; &nbsp;&nbsp;a</text>
+</!--> 
+
+<!-- 添加空格 &nbsp ensp -->
+<!-- text的属性  decode space-->
+<!-- 自适应 所有机型的宽度位750rps 高度 1334rpx -->
+<!-- 1rpx =  500cm / 750 *160-->
+<!--  -->
+
+
+<!-- <view hover-class="test-hover" class="test-container">
+  <view class="box" hover-class="box-hover" hover-stop-propagation="{{true}}"></view>
+</view>  -->
+
+<!-- hover-start-time 按住后多久出现
+
+hover-stay-time 手指松开后点击态保持的时间-->
+
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class="picture-box"> 
+    <image src="../../image/bg2.png" id="img" mode="widthFix"/>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
 </view>
+
+<!-- 跳转页面 
+
+关闭当前页面跳转到某一个页面 跳转了就回不去
+wx.redirectTo({
+  url: ...
+}) 
+
+wx.navigateTo({
+  url:  ,
+  delta: 
+})
+wx.navigateBack({
+  delta: 返回的页面数，如果 delta 大于现有页面数，则返回到首页。
+})
+
+
+-->

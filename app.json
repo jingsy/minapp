@@ -1,13 +1,15 @@
 {
   "pages": [
+    "pages/article/article",
+    "pages/type/type",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/articleDetail/articleDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#666",
+    "navigationBarTitleText": "拉斐尔的心灵鸡汤",
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json"
 }

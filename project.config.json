@@ -4,15 +4,16 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.7.4",
 	"appid": "wx3193f5122d553ff7",
 	"projectname": "%E5%BE%AE%E4%BF%A1demo",
 	"debugOptions": {
@@ -30,13 +31,32 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "读书标签",
+					"pathName": "pages/type/type",
+					"query": "typeId=3",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "文章详情",
+					"pathName": "pages/articleDetail/articleDetail",
+					"query": "id=11",
+					"scene": null
+				}
+			]
 		}
 	}
 }

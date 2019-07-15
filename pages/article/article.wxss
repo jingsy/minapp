@@ -1,0 +1,52 @@
+/* pages/article/article.wxss */
+
+@import '../common-list.wxss';
+
+.container{
+    padding: 0 10rpx;
+}
+.recommend-article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.date{
+    position: relative;
+    font-size: 52rpx;
+    letter-spacing: 10rpx;
+    padding-bottom: 24rpx;
+}
+.date::after{
+    position: absolute;
+    left: 62rpx;
+    display: block;
+    content: '';
+    width: 114rpx;
+    height: 4rpx;
+    background-color: #999;
+}
+.recommend-title{
+    font-size: 28rpx;
+    padding-bottom: 15rpx;
+}
+.recommend-cover{
+    width: 700rpx;
+}
+
+.recommend-box{
+    padding: 0 10rpx;
+}
+.recommend-box text{
+    display: inline-block;
+    border: 1rpx solid black;
+    padding: 10rpx 20rpx;
+    margin: 20rpx 20rpx 20rpx 0;
+}
+
+.recommend-box text:nth-of-type(1){
+    background-color: black;
+    color: aliceblue;
+}
+

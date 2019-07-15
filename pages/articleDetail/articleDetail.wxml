@@ -1,0 +1,98 @@
+<!-- pages/articleDetail/articleDetail.wxml -->
+<view class="container">
+    <view class="title-container">
+        <text>{{articleDetail.title}}</text>
+    </view>
+    <view class="authorAndDate">
+        <text>{{articleDetail.author}}</text>
+        <text>{{articleDetail.publishTime}}</text>
+    </view>
+
+    <view class="media-container">
+        <swiper wx:if="{{articleDetail.banner[0]}}" 
+        indicator-dots="{{true}}" 
+        autoplay="{{true}}" 
+        interval="2000" 
+        class="banner" 
+        >
+            <swiper-item wx:for="{{articleDetail.banner}}">
+                <image src="{{item}}" />
+            </swiper-item>
+        </swiper>
+
+        <video 
+            wx:if="{{articleDetail.video.src}}" 
+            id="myVideo" 
+            src="{{articleDetail.video.src}}">
+            
+            <cover-view class="controls" wx:if="{{videoCoverHidden}}">
+                <cover-image src="{{articleDetail.video.poster}}"></cover-image>
+                <cover-view class="controls-box" bind:tap="onVideoTap">
+                    <cover-image src="/image/icon/Icon_play_white.png"></cover-image>
+                    <cover-view>{{articleDetail.video.duration}}"</cover-view>
+                </cover-view>
+            </cover-view>
+        </video>
+
+        <view wx:if="{{articleDetail.audio.src}}" class="audio-container">
+            <view class="audio-controller">
+                <image bind:tap="onAudioPlayTap" wx:if="{{playing}}" src="/image/icon/Icon_pause.png" />
+                <image bind:tap="onAudioPlayTap" wx:else src="/image/icon/Icon_play.png" />
+            </view>
+            <view class="audio-info">
+                <view class="audio-title">
+                    <text>{{articleDetail.audio.audioTitle}}</text>
+                </view>
+                <view class="audio-form">
+                    <text>{{articleDetail.audio.from}}</text>
+                </view>
+                <view class="audio-progress">
+                    <progress percent="{{progressPercent}}" style="width:{{progressWidth+'rpx'}}" />
+                    <view bind:touchstart="onAudioCircleStart" bind:touchmove="onAudioCircleMove" class="progress-circle" style="left:{{progressCircleLeft + 'rpx'}}"></view>
+                </view>
+                <view class="audio-time">
+                    <text>{{format(audioCurTime)}}</text>
+                    <text>{{format(articleDetail.audio.duration)}}</text>
+                </view>
+            </view>
+        </view>
+
+    </view>
+
+
+    <view class="content-container">
+        <text decode="{{true}}">{{filter(articleDetail.content)}}</text>
+    </view>
+    <view class="read-container">
+        <text>阅读</text>
+        <text>{{articleDetail.readNum}}</text>
+    </view>
+</view>
+<!-- content换行 -->
+<wxs module="filter">
+    var filter =function(text){
+        if(!text){
+            return
+        }
+        //var reg = /\\n/g;
+        var reg = getRegExp('\\n','g');
+
+        return text.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+    }
+    
+    module.exports = filter;
+</wxs>
+<wxs module="format">
+//sec ==>0:00
+    var format = function(sec){
+        var minute =Math.floor(sec/60);
+        var second = sec%60
+
+        minute = minute <10? '0'+minute:minute;
+        second = second <10? '0'+second:second;
+
+        return minute+ ":" + second
+    }
+
+    module.exports = format;
+</wxs>

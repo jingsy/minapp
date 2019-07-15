@@ -1,0 +1,99 @@
+/* pages/type/type.wxss */
+
+/* pages/article/article.wxss */
+
+@import '../common-list.wxss';
+
+.container{
+    padding: 0 10rpx;
+}
+
+
+/* type page-head */
+.title-container{
+    width: 100%;
+    position: relative;
+}
+.title-container .title-cover{
+    width: 100%;
+}
+.title-container .title-box{
+    bottom: -60rpx;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 150rpx;
+    border: 1rpx solid #f2f2f2;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.title-container .title-box text{
+    font-size: 50rpx;
+    color: black;
+    display: inline-block;
+    margin-left: 10rpx;
+} 
+.title-container .title-handle{
+    /* width: 30rpx; */
+    height: 60rpx;
+    position: absolute;
+    right: 20rpx;
+    display: inline-block;
+    margin: 10rpx 5rpx 10rpx;
+}
+.title-container .title-handle image{
+    width: 60rpx;
+    height: 60rpx;
+    margin: 0 10rpx;
+}
+
+.recommend-article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.date{
+    position: relative;
+    font-size: 52rpx;
+    letter-spacing: 10rpx;
+    padding-bottom: 24rpx;
+}
+.date::after{
+    position: absolute;
+    left: 62rpx;
+    display: block;
+    content: '';
+    width: 114rpx;
+    height: 4rpx;
+    background-color: #999;
+}
+.recommend-title{
+    font-size: 28rpx;
+    padding-bottom: 15rpx;
+}
+.recommend-cover{
+    width: 700rpx;
+}
+
+.recommend-box{
+    padding: 0 10rpx;
+}
+.recommend-box text{
+    display: inline-block;
+    border: 1rpx solid black;
+    padding: 10rpx 20rpx;
+    margin: 20rpx 20rpx 20rpx 0;
+}
+
+.recommend-box text:nth-of-type(1){
+    background-color: black;
+    color: aliceblue;
+}
+
+.article-type text{
+    border: none;
+    padding: 0;
+}
